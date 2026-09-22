@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azza Touati | Futuristic Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Effects -->
+    <canvas id="particle-canvas"></canvas>
+    <div class="scanlines"></div>
+    <div class="vignette"></div>
+
+    <!-- Navigation -->
+    <nav class="cyber-nav">
+        <div class="logo">
+            <i class="fas fa-microchip"></i> AZZA_SYS.exe
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about" data-text="01.ABOUT">01.ABOUT</a></li>
+            <li><a href="#experience" data-text="02.EXPERIENCE">02.EXPERIENCE</a></li>
+            <li><a href="#projects" data-text="03.PROJECTS">03.PROJECTS</a></li>
+            <li><a href="#skills" data-text="04.SKILLS">04.SKILLS</a></li>
+            <li><a href="#education" data-text="05.EDUCATION">05.EDUCATION</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Hero / About Section -->
+        <section id="about" class="hero-section section-hidden">
+            <div class="hero-content">
+                <p class="sys-msg">> SYSTEM_BOOT: <span class="accent-cyan">SUCCESS</span></p>
+                <div class="glitch-wrapper">
+                    <h1 class="glitch" data-text="AZZA TOUATI">AZZA TOUATI</h1>
+                </div>
+                <h2 class="neon-text accent-pink">COMPUTER SCIENCE GRADUATE</h2>
+                
+                <div class="profile-box cyber-border">
+                    <i class="fas fa-quote-left quote-icon accent-cyan"></i>
+                    <p class="profile-text">
+                        Computer science graduate with a strong academic foundation combining technical expertise and business acumen, along with a strong interest in data analysis and artificial intelligence. I am driven by the goal of turning data into strategic tools that deliver meaningful insights, support decision-making, and contribute to building more effective solutions.
+                    </p>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#contact" class="cyber-btn primary">
+                        <span class="btn-text">INITIALIZE CONTACT</span>
+                        <span class="btn-glitch"></span>
+                    </a>
+                    <a href="#projects" class="cyber-btn secondary">
+                        <span class="btn-text">VIEW_ARCHIVES</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual parallax-layer" data-speed="2">
+                <div class="avatar-container" id="avatar-tilt">
+                    <div class="holo-ring ring-1"></div>
+                    <div class="holo-ring ring-2"></div>
+                    <div class="holo-ring ring-3"></div>
+                    <div class="avatar-glow"></div>
+                    <img src="assets/avatar_3d.jpg" alt="Azza Touati 3D Avatar" class="avatar-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section section-hidden">
+            <h2 class="section-title"><span class="accent-cyan">02.</span> PROFESSIONAL_EXPERIENCE <span class="blinking-cursor">_</span></h2>
+            <div class="timeline">
+                
+                <div class="timeline-item cyber-card">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date accent-pink">Feb 2025 - May 2025</div>
+                    <h3 class="timeline-role">Research Intern</h3>
+                    <h4 class="timeline-company"><i class="fas fa-building accent-cyan"></i> Higher Institute of Computer Science and Multimedia of Sfax</h4>
+                    <p class="timeline-project"><strong>Project:</strong> Predictive Analytics for Healthcare Decision Support — Parkinson's Disease</p>
+                    <ul class="cyber-list">
+                        <li><i class="fas fa-angle-right"></i> Developed and evaluated several machine learning and deep learning models for predictive classification based on structured clinical datasets.</li>
+                        <li><i class="fas fa-angle-right"></i> Applied data preprocessing, feature engineering, and model optimization techniques to improve prediction performance and reliability.</li>
+                        <li><i class="fas fa-angle-right"></i> Designed an interactive web dashboard to visualize predictions and support data-driven interpretation of results.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item cyber-card">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date accent-pink">Jun 2024 - Jul 2024</div>
+                    <h3 class="timeline-role">Information Systems Intern</h3>
+                    <h4 class="timeline-company"><i class="fas fa-building accent-cyan"></i> SAIPH</h4>
+                    <p class="timeline-project"><strong>Project:</strong> ERP Data Management and SQL Support</p>
+                    <ul class="cyber-list">
+                        <li><i class="fas fa-angle-right"></i> Managed and updated business data within Sage ERP databases.</li>
+                        <li><i class="fas fa-angle-right"></i> Executed SQL queries and database operations for reporting and data analysis.</li>
+                        <li><i class="fas fa-angle-right"></i> Contributed to the integration and maintenance of information systems.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section section-hidden">
+            <h2 class="section-title"><span class="accent-pink">03.</span> PROJECT_DIRECTORIES <span class="blinking-cursor">_</span></h2>
+            <div class="projects-grid">
+                
+                <div class="project-card cyber-border">
+                    <div class="project-icon accent-cyan"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="project-title">MacroCast</h3>
+                    <p class="project-desc">Time-series modeling and forecasting of inflation and GDP.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Data Science</span>
+                        <span class="tech-tag">Time-series</span>
+                    </div>
+                    <a href="https://github.com/touatiazza/MacroCast" target="_blank" class="project-github-link"><i class="fab fa-github"></i> Source Code</a>
+                </div>
+
+                <div class="project-card cyber-border">
+                    <div class="project-icon accent-pink"><i class="fas fa-dna"></i></div>
+                    <h3 class="project-title">Parki AI</h3>
+                    <p class="project-desc">Deep learning system for Parkinson's disease recognition.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Deep Learning</span>
+                        <span class="tech-tag">Healthcare AI</span>
+                    </div>
+                    <a href="https://github.com/touatiazza/Parki-AI" target="_blank" class="project-github-link"><i class="fab fa-github"></i> Source Code</a>
+                </div>
+
+                <div class="project-card cyber-border">
+                    <div class="project-icon accent-cyan"><i class="fas fa-database"></i></div>
+                    <h3 class="project-title">RetailFlow</h3>
+                    <p class="project-desc">ETL pipeline and data warehouse for retail sales.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">ETL</span>
+                        <span class="tech-tag">Data Warehouse</span>
+                    </div>
+                    <a href="https://github.com/touatiazza/RetailFlow" target="_blank" class="project-github-link"><i class="fab fa-github"></i> Source Code</a>
+                </div>
+
+                <div class="project-card cyber-border">
+                    <div class="project-icon accent-pink"><i class="fas fa-robot"></i></div>
+                    <h3 class="project-title">JobPulse AI</h3>
+                    <p class="project-desc">AI-driven analysis of the job market.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">AI</span>
+                        <span class="tech-tag">Data Analysis</span>
+                    </div>
+                    <a href="https://github.com/touatiazza/JobPulse-AI" target="_blank" class="project-github-link"><i class="fab fa-github"></i> Source Code</a>
+                </div>
+
+            </div>
+            <div class="center-btn">
+                <a href="https://touatiazza.github.io" target="_blank" class="cyber-link">>>> EXECUTE: VIEW_MORE_PROJECTS <<<</a>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section section-hidden">
+            <h2 class="section-title"><span class="accent-cyan">04.</span> SYSTEM_CAPABILITIES <span class="blinking-cursor">_</span></h2>
+            <div class="skills-container">
+                
+                <div class="skill-category cyber-card">
+                    <h3><i class="fas fa-code accent-cyan"></i> Tech & Frameworks</h3>
+                    <div class="skill-items">
+                        <span class="skill-badge">HTML</span>
+                        <span class="skill-badge">CSS</span>
+                        <span class="skill-badge">JavaScript</span>
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">Flask</span>
+                        <span class="skill-badge">R</span>
+                    </div>
+                </div>
+
+                <div class="skill-category cyber-card">
+                    <h3><i class="fas fa-chart-pie accent-pink"></i> Data Viz & BI</h3>
+                    <div class="skill-items">
+                        <span class="skill-badge">Power BI</span>
+                        <span class="skill-badge">Excel</span>
+                        <span class="skill-badge">Tableau</span>
+                    </div>
+                </div>
+
+                <div class="skill-category cyber-card">
+                    <h3><i class="fas fa-server accent-cyan"></i> Databases & API</h3>
+                    <div class="skill-items">
+                        <span class="skill-badge">SQL</span>
+                        <span class="skill-badge">REST APIs</span>
+                    </div>
+                </div>
+
+                <div class="skill-category cyber-card">
+                    <h3><i class="fas fa-cogs accent-pink"></i> ETL & Tools</h3>
+                    <div class="skill-items">
+                        <span class="skill-badge">SSMS</span>
+                        <span class="skill-badge">SSIS</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category cyber-card">
+                    <h3><i class="fas fa-project-diagram accent-cyan"></i> Methodologies</h3>
+                    <div class="skill-items">
+                        <span class="skill-badge">Agile</span>
+                        <span class="skill-badge">Scrum</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Education & Certs Section -->
+        <section id="education" class="section section-hidden">
+            <h2 class="section-title"><span class="accent-pink">05.</span> KNOWLEDGE_BASE <span class="blinking-cursor">_</span></h2>
+            
+            <div class="split-section">
+                <!-- Education -->
+                <div class="edu-block">
+                    <h3 class="subsection-title"><i class="fas fa-graduation-cap accent-cyan"></i> Education</h3>
+                    
+                    <div class="cyber-card edu-card">
+                        <div class="edu-date accent-pink">2025 - 2027 (Ongoing)</div>
+                        <h4 class="edu-degree">Professional Master's | Data Science For Business And Economics</h4>
+                        <p class="edu-school">Higher Institute of Commercial Studies of Sfax | IHEC</p>
+                    </div>
+
+                    <div class="cyber-card edu-card">
+                        <div class="edu-date accent-pink">2022 - 2025</div>
+                        <h4 class="edu-degree">Bachelor in Computer Science | Computer Science and Multimedia</h4>
+                        <p class="edu-school">Higher Institute of Computer Science and Multimedia of Sfax | ISIMS</p>
+                    </div>
+                </div>
+
+                <!-- Certs, Languages, Community -->
+                <div class="side-blocks">
+                    <h3 class="subsection-title"><i class="fas fa-certificate accent-pink"></i> Certifications</h3>
+                    <ul class="cyber-list block-list cyber-card">
+                        <li><i class="fas fa-check-circle accent-cyan"></i> Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</li>
+                        <li><i class="fas fa-check-circle accent-cyan"></i> Google Data Analytics</li>
+                        <li><i class="fas fa-check-circle accent-cyan"></i> Power BI | 365 Data Science</li>
+                    </ul>
+
+                    <h3 class="subsection-title mt-4"><i class="fas fa-language accent-cyan"></i> Languages</h3>
+                    <div class="languages-grid cyber-card">
+                        <div class="lang-item">
+                            <span class="lang-name">English</span>
+                            <span class="lang-lvl">EFset C1</span>
+                        </div>
+                        <div class="lang-item">
+                            <span class="lang-name">French</span>
+                            <span class="lang-lvl">TCF-TP B2</span>
+                        </div>
+                        <div class="lang-item">
+                            <span class="lang-name">Arabic</span>
+                            <span class="lang-lvl">Native</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section section-hidden contact-section">
+            <h2 class="section-title center-text"><span class="accent-cyan">06.</span> ESTABLISH_CONNECTION <span class="blinking-cursor">_</span></h2>
+            
+            <div class="contact-terminal cyber-border">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="terminal-title">contact_module.sh</span>
+                </div>
+                <div class="terminal-body">
+                    <p class="sys-msg">Select communication protocol:</p>
+                    
+                    <div class="contact-links">
+                        <a href="mailto:touatiazza4@gmail.com" class="contact-btn">
+                            <i class="fas fa-envelope"></i>
+                            <span>touatiazza4@gmail.com</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/azza-touati" target="_blank" class="contact-btn">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn Profile</span>
+                        </a>
+                        <a href="https://touatiazza.github.io" target="_blank" class="contact-btn">
+                            <i class="fas fa-globe"></i>
+                            <span>GitHub Portfolio</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scroll to Top Button -->
+        <a href="#" class="scroll-to-top" id="scrollToTopBtn" aria-label="Scroll to top">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+
+    </main>
+
+    <footer class="cyber-footer">
+        <p>&copy; 2026 AZZA TOUATI // ALL SYSTEMS ONLINE</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
