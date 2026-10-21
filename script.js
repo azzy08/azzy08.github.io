@@ -74,12 +74,12 @@
             this.vx = (Math.random() - 0.5) * 0.38;
             this.vy = (Math.random() - 0.5) * 0.38;
 
-            /* Larger, more visible nodes: 1.8 – 4 px */
-            this.radius  = Math.random() * 2.2 + 1.8;
+            /* Subtle nodes: 1 – 2.5 px */
+            this.radius  = Math.random() * 1.5 + 1.0;
             this.isCyan  = Math.random() > 0.45;
 
-            /* Higher base opacity: 0.45 – 0.85 */
-            this.opacity = Math.random() * 0.4 + 0.45;
+            /* Soft base opacity: 0.08 – 0.20 */
+            this.opacity = Math.random() * 0.12 + 0.08;
 
             /* Pulse state */
             this.pulseLife = 0; // 0…1, decays
@@ -136,25 +136,25 @@
             /* Skip neurons scrolled out of view */
             if (drawY < -20 || drawY > H + 20) return;
 
-            const totalOpacity = Math.min(1, this.opacity + this.pulseLife * 0.5);
-            const totalRadius  = this.radius + this.pulseLife * 2.5;
+            const totalOpacity = Math.min(0.35, this.opacity + this.pulseLife * 0.15);
+            const totalRadius  = this.radius + this.pulseLife * 1.5;
 
             const rgb = this.isCyan ? '0,243,255' : '255,0,255';
 
             ctx.save();
 
-            /* Outer glow halo */
+            /* Outer glow halo — kept very subtle */
             ctx.beginPath();
-            ctx.arc(this.x, drawY, totalRadius * 3, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(${rgb},${totalOpacity * 0.12})`;
+            ctx.arc(this.x, drawY, totalRadius * 2.5, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(${rgb},${totalOpacity * 0.03})`;
             ctx.fill();
 
             /* Core node */
             ctx.beginPath();
             ctx.arc(this.x, drawY, totalRadius, 0, Math.PI * 2);
             ctx.fillStyle = `rgba(${rgb},${totalOpacity})`;
-            ctx.shadowColor  = `rgba(${rgb},0.95)`;
-            ctx.shadowBlur   = 14 + this.pulseLife * 14;
+            ctx.shadowColor  = `rgba(${rgb},0.25)`;
+            ctx.shadowBlur   = 3 + this.pulseLife * 4;
             ctx.fill();
 
             ctx.restore();
@@ -188,7 +188,7 @@
 
         draw() {
             const progress = this.r / this.max;
-            const alpha    = (1 - progress) * 0.8;
+            const alpha    = (1 - progress) * 0.45;
 
             ctx.save();
 
@@ -239,8 +239,8 @@
 
                 if (dist < DIST_CURSOR) {
                     const t     = dist / DIST_CURSOR;
-                    const alpha = (1 - t) * 0.75;
-                    const lw    = 1 + (1 - t) * 1.2;
+                    const alpha = (1 - t) * 0.35;
+                    const lw    = 0.6 + (1 - t) * 0.7;
 
                     ctx.save();
                     ctx.beginPath();
@@ -248,8 +248,8 @@
                     ctx.lineTo(mouse.x, mouse.y);
                     ctx.strokeStyle = `rgba(255,0,255,${alpha})`;
                     ctx.lineWidth   = lw;
-                    ctx.shadowBlur  = 10;
-                    ctx.shadowColor = 'rgba(255,0,255,0.55)';
+                    ctx.shadowBlur  = 5;
+                    ctx.shadowColor = 'rgba(255,0,255,0.3)';
                     ctx.stroke();
                     ctx.restore();
                 }
@@ -265,19 +265,19 @@
 
                 if (dist < DIST_NODE) {
                     const t          = dist / DIST_NODE;
-                    const pulseBoost = (ni.pulseLife + nj.pulseLife) * 0.3;
-                    const alpha      = Math.min(0.75, (1 - t) * 0.55 + pulseBoost);
+                    const pulseBoost = (ni.pulseLife + nj.pulseLife) * 0.2;
+                    const alpha      = Math.min(0.28, (1 - t) * 0.22 + pulseBoost);
 
                     ctx.save();
                     ctx.beginPath();
                     ctx.moveTo(ni.x, niY);
                     ctx.lineTo(nj.x, njY);
                     ctx.strokeStyle = `rgba(0,243,255,${alpha})`;
-                    ctx.lineWidth   = 0.9 + pulseBoost * 0.8;
+                    ctx.lineWidth   = 0.6 + pulseBoost * 0.6;
 
                     if (pulseBoost > 0.08) {
-                        ctx.shadowBlur  = 8;
-                        ctx.shadowColor = 'rgba(0,243,255,0.7)';
+                        ctx.shadowBlur  = 4;
+                        ctx.shadowColor = 'rgba(0,243,255,0.4)';
                     }
 
                     ctx.stroke();
